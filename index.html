@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gourmet Mexicano</title>
-   <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/style.css">
   </head>
 
 <body>
@@ -19,8 +18,15 @@
 <main class="hero">
   <!-- Collage principal (izquierda) -->
   <div class="collage">
-    <img src="img/portada.png" alt="Portada Gourmet Mexicano">
-  </div>
+  <!-- La primera imagen define el tamaño del contenedor -->
+  <img class="capa fondo" src="img/background.png" alt="Fondo">
+  <!-- Se superpone encima -->
+  <img class="capa personajes" src="img/personajes.png" alt="Personajes">
+  <!-- Por último el logo -->
+  <img class="capa logo" src="img/GM_logo.png" alt="Logo Gourmet Mexicano">
+  <!-- Nuevo slogan debajo del logo -->
+  <p class="slogan">Barrio con clase</p>
+</div>
 
   <!-- Menú abanico (derecha) -->
   <div class="menu-abanico">
@@ -34,7 +40,5 @@
   </div>
 </main>
 
-  <h1>Gourmet Mexicano</h1>
-  <p>Barrio con clase</p>
 </body>
 </html>

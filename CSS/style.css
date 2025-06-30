@@ -3,24 +3,28 @@
    ============================ */
 
 /* ----------------------------
-   Estilos generales
+   Fondo full-page
    ---------------------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fffaf0;
+  background: url("../img/background.png") no-repeat center center fixed;
+  background-size: cover;
   color: #3e2f1c;
   text-align: center;
-  padding: 50px;
-  margin: 0;
+  /* padding moved al container para evitar scroll innecesario */
 }
 
-h1 {
-  color: #a52a2a;
-  font-size: 3em;
-}
-
-p {
-  font-size: 1.2em;
+/* ----------------------------
+   Contenedor principal
+   ---------------------------- */
+.container {
+  padding: 50px 20px;
 }
 
 /* ----------------------------
@@ -51,104 +55,184 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Ajustes para pantallas ≤ 360px (e.g. iPhone SE) */
+/* Ajustes para pantallas ≤ 360px (iPhone SE) */
 @media (max-width: 360px) {
-  nav ul {
-    gap: 10px;               /* reduce el espacio entre enlaces */
-  }
+  nav ul { gap: 10px; }
   nav ul li a {
-    font-size: 0.9em;        /* letra un poco más pequeña */
-    padding: 5px;            /* más “aire” alrededor del texto */
+    font-size: 0.9em;
+    padding: 5px;
   }
 }
 
 /* ----------------------------
-   Sección Hero (collage + menú abanico)
+   Hero: collage + menú abanico
    ---------------------------- */
 .hero {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  padding: 20px;
+  align-items: flex-start;
+  padding: 20px 0;
 }
 
-/* Collage principal */
+/* Collage superpuesto */
 .collage {
-  flex: 1 1 300px;    /* crece, pero mínimo 300px */
-  text-align: left;
+  position: relative;
+  flex: 1 1 300px;
+  max-width: 500px;
+  margin: 0 auto 20px;
 }
+
 .collage img {
+  display: block;
   width: 100%;
   height: auto;
-  max-width: 500px;   /* ajusta según tamaño de tu imagen */
+}
+
+/* Efecto parallax hover */
+.collage img.personajes,
+.collage img.logo {
+  position: absolute;
+  top: 0; left: 0;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.collage img.personajes:hover {
+  transform: translate3d(-10px, -10px, 0) scale(1.02);
+}
+
+.collage img.logo:hover {
+  transform: translate3d(5px, -5px, 0) scale(1.02);
+}
+
+/* Z-index para apilar correctamente */
+.collage img.fondo      { z-index: 1; }
+.collage img.personajes { z-index: 2; }
+.collage img.logo       { z-index: 3; }
+
+/* ---------------------------------------------------
+   Ajustes de posición y tamaño a tu gusto
+   --------------------------------------------------- */
+.collage img.personajes {
+  position: absolute;          /* ya lo tienes */
+  top:  80px;                  /* sube o baja este valor */
+  left: -200px;                 /* mueve a la derecha o izquierda */
+  width:  650px;               /* escala cambiando el ancho */
+  /* opcional: un pequeño escalado extra */
+  transform: translate(0, 0) scale(1);
+}
+
+.collage img.logo {
+  position: absolute;          /* ya lo tienes */
+  top:  450px;
+  left: 10px;
+  width:  500px;
+  transform: translate(0, 0) scale(1);
 }
 
 /* Menú abanico */
 .menu-abanico {
   position: relative;
-  flex: 0 0 200px;    /* ancho fijo */
+  flex: 0 0 200px;
   height: 200px;
-  margin-top: 20px;
+  margin: 20px auto 0;
 }
 
-/* Botón de togglear menú */
+/* Botón */
 .menu-abanico .menu-toggle {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 0; left: 0;
   background-color: #a52a2a;
   color: #fffaf0;
   border: none;
   padding: 10px 15px;
   cursor: pointer;
+  font-weight: bold;
 }
 
-/* Lista de opciones oculta inicialmente */
+/* Fan menu oculto */
 .menu-abanico .fan-menu {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: 0; padding: 0;
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 200px;
-  height: 200px;
+  bottom: 0; left: 0;
+  width: 200px; height: 200px;
 }
 
-/* Cada ítem superpuesto en mismo origen, girado */
+/* Capas del abanico */
 .menu-abanico .fan-menu li {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 200px;
-  height: 200px;
-  background: url("../img/menu.png") no-repeat center center;
+  bottom: 0; left: 0;
+  width: 200px; height: 200px;
   background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
   transform-origin: center bottom;
   opacity: 0;
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-/* Rotaciones para efecto abanico */
-.menu-abanico .fan-menu li:nth-child(1) { transform: rotate(-30deg); }
-.menu-abanico .fan-menu li:nth-child(2) { transform: rotate(-10deg); }
-.menu-abanico .fan-menu li:nth-child(3) { transform: rotate(10deg); }
-.menu-abanico .fan-menu li:nth-child(4) { transform: rotate(30deg); }
+/* Asignar cada imagen */
+.menu-abanico .fan-menu li.comida     { background-image: url("../img/comida.png"); }
+.menu-abanico .fan-menu li.antojitos  { background-image: url("../img/antojitos.png"); }
+.menu-abanico .fan-menu li.bebidas    { background-image: url("../img/bebidas.png"); }
+.menu-abanico .fan-menu li.postres    { background-image: url("../img/postres.png"); }
 
-/* Mostrar al abrir */
+/* Giro de cada capa */
+.menu-abanico .fan-menu li.comida     { transform: rotate(-30deg); }
+.menu-abanico .fan-menu li.antojitos  { transform: rotate(-10deg); }
+.menu-abanico .fan-menu li.bebidas    { transform: rotate(10deg); }
+.menu-abanico .fan-menu li.postres    { transform: rotate(30deg); }
+
+/* Mostrar cuando .open */
 .menu-abanico.open .fan-menu li {
   opacity: 1;
 }
 
-/* Texto centrado dentro de cada capa */
+/* Texto dentro de cada capa */
 .menu-abanico .fan-menu li a {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   line-height: 200px;
   text-align: center;
   color: #fffaf0;
   text-decoration: none;
   font-weight: bold;
+}
+
+/* ----------------------------
+   Tipografía principal
+   ---------------------------- */
+h1 {
+  color: #a52a2a;
+  font-size: 3em;
+  margin: 20px 0 10px;
+}
+
+p {
+  font-size: 1.2em;
+  margin: 0 0 30px;
+}
+.collage img.fondo {
+  display: none;
+}
+
+/* ----------------------------
+   Slogan manuscrito bajo el logo
+   ---------------------------- */
+   .collage {
+  position: relative; /* ya lo tienes, solo para recordarlo */
+}
+
+.slogan {
+  position: absolute;         /* lo posiciona sobre el collage */
+  top: 635px;               /* ajusta este valor para subir/bajar */
+  left: 50%;                  /* lo centra horizontalmente */
+  transform: translateX(-50%);
+  font-family: 'Brush Script MT', cursive; /* estilo manuscrito */
+  font-size: 2.8em;           /* ajusta el tamaño a tu gusto */
+  color: #3e2f1c;             /* mismo color de texto */
+  margin: 0;
+  padding: 0;
 }

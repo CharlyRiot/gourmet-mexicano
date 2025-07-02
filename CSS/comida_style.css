@@ -1,0 +1,105 @@
+/* ============================
+   CSS de Comida – Gourmet Mexicano
+   ============================ */
+
+/* ——— Menu Header ——— */
+.menu-header-wrapper {
+  display: inline-block;
+  margin-top: 60px;
+  padding-bottom: 4px;
+  margin-bottom: 20px;
+  background: linear-gradient(
+    to right,
+    #69411D 0%,
+    #DEA86C 14.3%,
+    #FEFCA5 28.6%,
+    #FEFEFE 42.9%,
+    #FEFE9E 57.1%,
+    #F3B471 71.4%,
+    #774D27 85.7%,
+    #532F17 100%
+  ) no-repeat bottom;
+  background-size: 100% 4px; /* 4px de grosor */
+}
+
+.menu-header {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ——— Lista de Platillos & Nota ——— */
+.menu-list {
+  list-style: none;
+  margin: 0 auto 60px;
+  padding: 0;
+  max-width: 600px;
+}
+
+.menu-list li {
+  position: relative;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+.menu-list li .platillo {
+  display: inline-block;
+  background: rgba(255,255,255,0.6);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #3e2f1c;
+  text-transform: uppercase;
+}
+
+.nota {
+  text-align: center;
+  font-style: italic;
+  color: #3e2f1c;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+/* ——— Ventana “Pop-Out” Fija ——— */
+.preview {
+  position: fixed;
+  top: 100px;     /* ajústalo para mover verticalmente */
+  right: 570px;    /* ajústalo para mover horizontalmente */
+  width: 260px;
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 100;
+}
+
+/* precio grande dentro de la ventana */
+.preview .price-out {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 1.8em;
+  color: #fff;
+  text-shadow:
+    1px  1px 0 #000,
+   -1px  1px 0 #000,
+    1px -1px 0 #000,
+   -1px -1px 0 #000;
+  font-weight: bold;
+}
+
+/* descripción dentro de la ventana */
+.preview .desc {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+  font-size: 0.9em;
+  line-height: 1.2;
+}

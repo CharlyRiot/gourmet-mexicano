@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comida – Gourmet Mexicano</title>
+  <link rel="stylesheet" href="../CSS/style.css" />
+  <link rel="stylesheet" href="../CSS/comida_style.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="../index.html#">Menú</a></li>
+      <li><a href="../index.html#nosotros">Nosotros</a></li>
+      <li><a href="../index.html#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Menú de Comida -->
+    <div class="menu-header-wrapper">
+      <img src="../img/comida_dr.png"
+           alt="Menú de Comida"
+           class="menu-header" />
+    </div>
+
+    <ul class="menu-list">
+      <li
+        data-img="../img/mole-poblano.jpg"
+        data-price="$175"
+        data-desc="Salsa espesa preparada con diversos chiles, especias, chocolate y semillas."
+      >
+        <span class="platillo">MOLE POBLANO</span>
+      </li>
+      <li
+        data-img="../img/chile-nogada.jpg"
+        data-price="$210"
+        data-desc="Relleno de carne, frutas y especias; cubierto con salsa de nuez, granada y perejil."
+      >
+        <span class="platillo">CHILE EN NOGADA (de temporada)</span>
+      </li>
+      <li
+        data-img="../img/cochinita-pibil.jpg"
+        data-price="$175"
+        data-desc="Carne de cerdo marinada en achiote y naranja agria, envuelta en hoja de plátano."
+      >
+        <span class="platillo">COCHINITA PIBIL</span>
+      </li>
+      <li
+        data-img="../img/carnitas.jpg"
+        data-price="$180"
+        data-desc="Cerdo cocinado lentamente en su propia grasa hasta dorarse."
+      >
+        <span class="platillo">CARNITAS DE MICHOACÁN</span>
+      </li>
+      <li
+        data-img="../img/barbacoa.jpg"
+        data-price="$150"
+        data-desc="Carne (generalmente borrego) cocida en horno subterráneo envuelta en pencas de maguey."
+      >
+        <span class="platillo">BARBACOA DE HIDALGO</span>
+      </li>
+      <li
+        data-img="../img/enchiladas-verdes.jpg"
+        data-price="$120"
+        data-desc="Tortillas rellenas de pollo bañadas en salsa verde de tomatillo y crema."
+      >
+        <span class="platillo">ENCHILADAS VERDES</span>
+      </li>
+      <li
+        data-img="../img/tacos-pastor.jpg"
+        data-price="$130"
+        data-desc="Carne marinada en achiote, piña asada, cebolla y cilantro sobre tortilla."
+      >
+        <span class="platillo">TACOS AL PASTOR</span>
+      </li>
+    </ul>
+
+   <!-- Ventana pop-out fija -->
+  <div class="preview">
+    <div class="desc"></div>
+    <div class="price-out"></div>
+  </div>
+  
+    <p class="nota">
+      Nota: Específicamente vino un Poblano, un Yucateco, una Michoacana y una hidalguense a darnos la receta.
+    </p>
+  </main>
+
+  <!-- JS de la carpeta js (comida.js) -->
+  <!-- al final del <body>, justo antes de </body> -->
+<script src="../js/ventanita_comida.js"></script>
+</body>
+</html>

@@ -19,11 +19,21 @@
 
   <main>
     <!-- Menú de Comida -->
-    <div class="menu-header-wrapper">
-      <img src="../img/comida_dr.png"
-           alt="Menú de Comida"
-           class="menu-header" />
-    </div>
+<div class="menu-header-container">
+  <!-- Imagen de comida -->
+  <div class="menu-header-wrapper">
+    <img src="../img/comida_dr.png"
+         alt="Menú de Comida"
+         class="menu-header" />
+  </div>
+  <!-- SVG con el título de Comida -->
+  <div class="page-title">
+    <img src="../img/CS_title.svg"
+         alt="Título Comida"
+         class="title-svg" />
+  </div>
+</div>
+
 
     <ul class="menu-list">
       <li
@@ -80,7 +90,6 @@
    <!-- Ventana pop-out fija -->
   <div class="preview">
     <div class="desc"></div>
-    <div class="price-out"></div>
   </div>
   
     <p class="nota">
@@ -90,6 +99,6 @@
 
   <!-- JS de la carpeta js (comida.js) -->
   <!-- al final del <body>, justo antes de </body> -->
-<script src="../js/ventanita_comida.js"></script>
+<script src="../js/ventanita_menu.js"></script>
 </body>
 </html>

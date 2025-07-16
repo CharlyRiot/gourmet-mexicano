@@ -205,7 +205,7 @@ p { font-size: 1.2em; margin: 0 0 30px; }
   #532F17 100%    /* marrón oscuro final */
   );
   top: 630px;                       /* ajústalo para mover verticalmente */
-  left: 1100px;                      /* ajústalo para mover horizontalmente */
+  left: 1000px;                      /* ajústalo para mover horizontalmente */
   /* puedes usar bottom o right en lugar de top/left si prefieres */
 }
 

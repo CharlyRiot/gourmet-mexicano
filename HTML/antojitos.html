@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Antojitos – Gourmet Mexicano</title>
+  <link rel="stylesheet" href="../CSS/style.css" />
+  <link rel="stylesheet" href="../CSS/antojitos_style.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="../index.html#">Menú</a></li>
+      <li><a href="../index.html#nosotros">Nosotros</a></li>
+      <li><a href="../index.html#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Menú de Antojitos -->
+   <div class="menu-header-container">
+  <!-- Imagen de antojitos -->
+  <div class="menu-header-wrapper">
+    <img src="../img/antojitos_ea.png"
+         alt="Menú de Antojitos"
+         class="menu-header" />
+  </div>
+  <!-- SVG con el título -->
+  <div class="page-title">
+    <img src="../img/AM_title.svg"
+         alt="Título Antojitos"
+         class="title-svg" />
+  </div>
+</div>
+
+
+    <ul class="menu-list">
+      <li
+        data-img="../img/tlacoyos.jpg"
+        data-price="$65"
+        data-desc="Tipo empanada rellena de frijoles o haba. Cubierta con queso fresco, salsa verde y cebolla picada."
+      >
+        <span class="platillo">TLACOYOS (5 pzs)</span>
+      </li>
+      <li
+        data-img="../img/sopes.jpg"
+        data-price="$65"
+        data-desc="Con frijoles, lechuga, queso, crema y salsa. Acompañadas de pollo."
+      >
+        <span class="platillo">SOPES (5 pzs)</span>
+      </li>
+      <li
+        data-img="../img/quesadillas.jpg"
+        data-price="$35"
+        data-desc="Con queso (siempre). Opciones: tinga de pollo, champiñones, flor de calabaza."
+      >
+        <span class="platillo">QUESADILLAS</span>
+      </li>
+      <li
+        data-img="../img/tostadas.jpg"
+        data-price="$60"
+        data-desc="(3 pzs) Con frijoles refritos, pollo deshebrado, aguacate, queso, crema y salsa roja o verde."
+      >
+        <span class="platillo">TOSTADAS (3 pzs)</span>
+      </li>
+      <li
+        data-img="../img/gorditas.jpg"
+        data-price="$75"
+        data-desc="(5 pzs) Rellenas con chicharrón prensado, carne o queso. Servidas con salsa y crema."
+      >
+        <span class="platillo">GORDITAS (5 pzs)</span>
+      </li>
+      <li
+        data-img="../img/pambazo.jpg"
+        data-price="$70"
+        data-desc="(2 pzs) Pan sumergido en salsa roja, relleno de papa con chorizo. Dorado y servido con lechuga, crema y queso."
+      >
+        <span class="platillo">PAMBAZO (2 pzs)</span>
+      </li>
+      <li
+        data-img="../img/tamales.jpg"
+        data-price="$25"
+        data-desc="Variedades: rajas, verde, mole, dulce, adobo, frijol."
+      >
+        <span class="platillo">TAMALES</span>
+      </li>
+      <li
+        data-img="../img/huaraches.jpg"
+        data-price="$60"
+        data-desc="Con frijoles, carne, nopales, queso, crema y salsa."
+      >
+        <span class="platillo">HUARACHES</span>
+      </li>
+      <li
+        data-img="../img/molotes.jpg"
+        data-price="$30"
+        data-desc="Parecidos a empanadas fritas, con masa de maíz rellenos de chorizo con papa o tinga."
+      >
+        <span class="platillo">MOLOTES</span>
+      </li>
+      <li
+        data-img="../img/tacos-dorados.jpg"
+        data-price="$55"
+        data-desc="Tortillas enrolladas con pollo o papa, fritas y servidas con lechuga, crema, queso y salsa."
+      >
+        <span class="platillo">TACOS DORADOS</span>
+      </li>
+    </ul>
+
+    <!-- Ventana pop-out fija -->
+    <div class="preview">
+      <div class="desc"></div>
+    </div>
+    
+    <p class="nota">
+      Nota: Nuestros antojitos están inspirados en recetas tradicionales de cada región.
+    </p>
+  </main>
+
+  <!-- JS de la carpeta js -->
+  <script src="../js/ventanita_menu.js"></script>
+</body>
+</html>

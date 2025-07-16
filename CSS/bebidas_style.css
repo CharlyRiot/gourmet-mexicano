@@ -1,0 +1,217 @@
+/* ============================
+   CSS de Bebidas – Gourmet Mexicano (Diseño adaptado de Antojitos)
+   ============================ */
+
+/* ——— Estilos de los títulos de sección ——— */
+.sec-title {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+  display: block;
+  width: 900px;
+  margin: 80px 0 0px 180px;
+  color: #3e2f1c;
+}
+
+/* ——— Reducir espacio antes de “Con Barrio” ——— */
+/* Selecciona el <h2> que sigue a la lista .clase-list */
+.menu-list.clase-list + .sec-title {
+  /* margen: arriba 5px, derecha 0, abajo 20px, izquierda 180px */
+  margin: -70px 0 20px 180px;
+}
+
+
+/* ——— Diferenciación de fondo por sección ——— */
+.menu-list.clase-list .platillo {
+  background: #620000;
+  color: #fff;
+}
+
+.menu-list.barrio-list .platillo {
+  background: rgba(255, 255, 255, 0.6);
+  color: #3e2f1c;
+}
+
+/* ——— Contenedor del encabezado (imagen + SVG) ——— */
+.menu-header-container {
+  display: flex;                /* bloque flex para tomar todo el ancho */
+  align-items: center;          /* centra verticalmente */
+  justify-content: flex-start;  /* pega todo al inicio (izquierda) */
+  margin: 110px 0 -10px 110px;      /* arriba, derecha, abajo, izquierda */
+  text-align: left;             /* fuerza texto a la izquierda */
+}
+
+/* ——— Wrapper de la imagen ——— */
+.menu-header-wrapper {
+  margin: 0;                    /* elimina cualquier margen lateral */
+}
+
+/* ——— Imagen del encabezado (ajuste de tamaño) ——— */
+.menu-header {
+  display: block;
+  width: 400px;                 /* ajusta este valor al ancho deseado */
+  height: auto;
+}
+
+
+/* ——— Título en SVG ——— */
+.page-title {
+  margin: 0;                 /* sin desplazamiento lateral */
+}
+
+.page-title .title-svg {
+  display: block;
+  max-width: 100%;
+  height: 300px;
+}
+
+/* ——— Lista de Bebidas & Nota ——— */
+.menu-list {
+  list-style: none;
+  margin: 0 0 60px 180px;
+  padding: 0;
+  max-width: 900px;
+  text-align: left;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.menu-list li {
+  position: relative;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.menu-list li .platillo {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* ——— Ventana emergente vertical en columna ——— */
+.preview {
+  /* Mantén tu posicionamiento y tamaño */
+  position: fixed;
+  top: 50px;
+  right: 200px;
+  width: 500px;
+  height: 750px;
+
+  /* Esto es nuevo: conviértelo en flex-column */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 16px;            /* espacio interior */
+  box-sizing: border-box;   /* padding no rompe el ancho */
+
+  /* Lo de antes */
+  background-size: cover;
+  background-position: center;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 100;
+}
+
+/* ——— Ventana emergente vertical (Pop-Out) ——— */
+.preview {
+  position: fixed;
+  top: 50px;
+  right: 200px;
+  width: 500px;
+  height: 750px;
+
+  /* Nuevo: flex en columna para ordenar desc y precio */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 16px;
+  box-sizing: border-box;
+
+  background-size: cover;
+  background-position: center;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 100;
+}
+
+/* ——— Ventana emergente vertical (Pop-Out) ——— */
+.preview {
+  position: fixed;
+  top: 50px;
+  right: 200px;
+  width: 500px;
+  height: 750px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 16px;
+  box-sizing: border-box;
+
+  background-size: cover;
+  background-position: center;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 100;
+}
+
+/* ——— Descripción ——— */
+.preview .desc {
+  /* elimina cualquier posición absoluta previa */
+  position: static;
+  margin: 0 0 16px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow:
+     1px  1px 0 #000,
+    -1px  1px 0 #000,
+     1px -1px 0 #000,
+    -1px -1px 0 #000;
+  font-size: 0.9em;
+  line-height: 1.3;
+}
+
+/* ——— Precio anclado al fondo ——— */
+.preview .price-out {
+  position: static;
+  margin-top: auto;
+  align-self: flex-end;
+  font-weight: bold;
+  color: #fff;
+  text-shadow:
+     1px  1px 0 #000,
+    -1px  1px 0 #000,
+     1px -1px 0 #000,
+    -1px -1px 0 #000;
+  font-size: 1.8em;
+}
+
+
+/* ——— Nota final al pie del menú ——— */
+.nota {
+  text-align: center;
+  font-style: italic;
+  color: #3e2f1c;
+  max-width: 1950px;
+  margin: 10px auto 40px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.8em;
+  font-weight: 900;
+}
